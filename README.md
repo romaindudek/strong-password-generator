@@ -14,7 +14,7 @@ Generate strong random password without annoying special chars such as \" or !
 -h, --help    Show this help
 ```
 
-Without any options generates a 12 chars password including uppercases, lowercases, digits and one special char
+Without any options generates a 10 chars password including uppercases, lowercases, digits and one special char
 
 ## Requirements:
 
