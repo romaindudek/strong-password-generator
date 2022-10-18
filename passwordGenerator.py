@@ -24,8 +24,8 @@ def generatePass(includeSpecials:bool = True, defaultLength: int = 12, showStats
         output += pickupChar(DIGITS) + pickupChar(DIGITS)
         output += pickupChar(SPEC_CHAR_SET)
     totalPossibilities=math.pow(len(ASCII_SET + DIGITS + SPEC_CHAR_SET), defaultLength)
-    print(f"\nTotal number of possibilities : {totalPossibilities}") if showStats else 0
-    print(f"{round(totalPossibilities/(1000*60*60*24*365*100), 1):,} centuries at 1000 try/second.\n")
+    print(f"\nTotal number of possibilities : {round(totalPossibilities):,}") if showStats else 0
+    print(f"Brake time : {round(totalPossibilities/(10000*60*60*24*365*100), 1):,} centuries at 10,000 try/second.\n") if showStats else 0
     return ''.join(random.sample(output,len(output)))
 
 def help():
