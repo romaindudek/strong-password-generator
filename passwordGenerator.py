@@ -14,11 +14,13 @@ def pickupChar(charSet):
 def generatePass(includeSpecials:bool = True, defaultLength: int = 12):
     output=""
     if not includeSpecials:
-        for i in range(0, defaultLength):
-            output += pickupChar(ASCII_SET + DIGITS)
+        for i in range(0, defaultLength -2):
+            output += pickupChar(ASCII_SET)
+        output += pickupChar(DIGITS) + pickupChar(DIGITS)
     else:
-        for i in range(0, defaultLength - 1):
-            output += pickupChar(ASCII_SET + DIGITS)
+        for i in range(0, defaultLength - 3):
+            output += pickupChar(ASCII_SET)
+        output += pickupChar(DIGITS) + pickupChar(DIGITS)
         output += pickupChar(SPEC_CHAR_SET)
     return ''.join(random.sample(output,len(output)))
 
