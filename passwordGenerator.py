@@ -26,7 +26,7 @@ def generatePass(includeSpecials:bool = True, defaultLength: int = 12):
 
 def help():
     print("""
-    PasswordGenerator - © Romain Dudek 2022
+    PasswordGenerator
     Generate strong random password without annoying special chars such as \" or !
     
     Usage : 
@@ -47,6 +47,9 @@ if __name__ == '__main__':
         passLength=args[args.index("-l") + 1]
         try:
             passLength = int(passLength)
+            if passLength < 8:
+                print("\n    WARNING: Password length must be 8 or greater")
+                exit()
         except:
             help()
             exit()
